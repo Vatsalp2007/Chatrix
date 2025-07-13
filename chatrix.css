@@ -1,0 +1,1373 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --back-ground-color: #0e0e0e;
+    --background-color2: #252525;
+    --background-color3: #1a1a1a;
+    --gradient--: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+    --icon-color--: #333;
+    --text-color: #eee;
+}
+
+body.theme-default {
+    --back-ground-color: #0e0e0e;
+    --background-color2: #252525;
+    --gradient--: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+    --s_gradient--: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+    --r_gradient--: linear-gradient(50deg, rgb(191, 239, 255), rgb(255, 226, 230));
+    --icon-color--: #000000;
+    --text-color: #c0c0c0;
+    --s_text-color: #181818;
+    --r_text-color: #333333;
+    --member-table--: #333333;
+}
+
+body.theme-dark {
+    --back-ground-color: #0e0e0e;
+    --background-color2: #0e0e0e;
+    --gradient--: linear-gradient(50deg, rgb(95, 95, 95), rgb(141, 141, 141));
+    --r_gradient--: linear-gradient(50deg, rgb(24, 24, 24), rgb(39, 39, 39));
+    --s_gradient--: linear-gradient(50deg, rgb(43, 43, 43), rgb(68, 68, 68));
+    --icon-color--: rgb(0, 0, 0);
+    --text-color: rgb(146, 146, 146);
+    --s_text-color: #a8a8a8;
+    --r_text-color: #aaaaaa;
+    --member-table--: #252525;
+}
+
+body.theme-extra-dark {
+    --back-ground-color: rgb(0, 0, 0);
+    --background-color2: #000000;
+    --gradient--: linear-gradient(50deg, #3f3f3f, #1d1d1d);
+    --s_gradient--: linear-gradient(50deg, rgb(24, 24, 24), rgb(26, 25, 25));
+    --r_gradient--: linear-gradient(50deg, rgb(17, 17, 17), rgb(22, 22, 22));
+    --icon-color--: #000000;
+    --text-color: #535353;
+    --s_text-color: #8b8b8b;
+    --r_text-color: #535353;
+    --member-table--: #141414;
+}
+
+
+body {
+    background-color: var(--back-ground-color);
+
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    color: white;
+    width: 100%;
+    font-size: 1.5vw;
+    margin-top: 1.5%;
+    opacity: 0;
+    animation: logo 0.5s ease forwards;
+    animation-delay: 0.5s;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+nav h2 {
+    background: -webkit-linear-gradient(#eee, #333);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes logo {
+    0% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ================================Main Page================================== */
+.main_container {
+    position: fixed;
+    height: 88vh;
+    width: 98%;
+    margin-left: 1%;
+    margin-top: 10vh;
+    background-color: var(--back-ground-color);
+    border-radius: 5px;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+}
+
+/* =======================================Members page================================= */
+
+.members {
+    height: 88vh;
+    display: block;
+    grid-column: 1/2;
+    background-color: var(--background-color2);
+    border-radius: 5px;
+    animation: members_an 0.5s ease forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    display: grid;
+    grid-template-columns: 5fr;
+    grid-template-rows: 0.5fr 4.5fr 0.5fr;
+    grid-gap: 5px;
+}
+
+@keyframes members_an {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+
+/* =====================top div ======= */
+
+.top_div {
+    display: flex;
+    /* opacity: 0; */
+    /* animation: top_div_an 0.8s ease forwards; */
+    animation-delay: 1s;
+}
+
+.members hr {
+    opacity: 0;
+    animation: top_div_an 0.8s ease forwards;
+    animation-delay: 1s;
+}
+
+@keyframes top_div_an {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.members h2 {
+    background: var(--gradient--);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5vw;
+    margin: 5% auto auto;
+    text-align: left;
+    padding-top: 1%;
+}
+
+.mid_div p {
+    background: var(--gradient--);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5vw;
+    margin: 5% auto auto 8%;
+    text-align: left;
+    padding-top: 1%;
+}
+
+
+.members button {
+    padding: 2%;
+    background: var(--gradient--);
+    border: none;
+    border-radius: 5px;
+    color: var(--icon-color--);
+    font-size: 1.5vw;
+    margin: 5% 5% auto auto;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-bottom: 5%;
+}
+
+.member_tr {
+    font-size: 1.8vw;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* =========================mid div ================== */
+
+#search_uid {
+    height: auto;
+    width: 65%;
+    font-size: 0.8vw;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid var(--text-color);
+    transition: all 0.5s;
+    color: var(--text-color);
+    margin-left: 8%;
+
+    &:focus {
+        font-size: 1.2vw;
+    }
+}
+
+#search_btn {
+    width: max-content;
+    height: max-content;
+    padding: 2.5%;
+}
+
+/* ============================bottom diV================= */
+
+.bottom_div {
+    display: flexbox;
+    width: 100%;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    overflow: hidden;
+}
+
+.log_out_btn {
+    width: 100%;
+    padding: 0;
+    background: var(--gradient--);
+    border: none;
+    border-radius: 5px;
+    color: var(--icon-color--);
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+        font-size: 1.8vw;
+    }
+}
+
+.profile_btn {
+    left: 5%;
+    width: 100%;
+    padding: 2%;
+    background: var(--gradient--);
+    border: none;
+    border-radius: 5px;
+    color: var(--icon-color--);
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+        font-size: 1.8vw;
+    }
+}
+
+/* =================================chat page================================== */
+
+.chat {
+    grid-column: 2/3;
+    background-color: var(--background-color2);
+    border-radius: 5px;
+    animation: chat_an 0.8s ease forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+    transition: all 0.5s;
+}
+
+@keyframes chat_an {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.chat {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat h1 {
+    background: var(--gradient--);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5vw;
+    animation: text_heading 0.7s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+}
+
+@keyframes text_heading {
+    0% {
+        font-size: 1vw;
+        opacity: 0;
+    }
+
+    100% {
+        font-size: 2.5vw;
+        opacity: 1;
+    }
+}
+
+.friend_name {
+    color: var(--text-color);
+    display: inline-block;
+    margin-top: 2.5%;
+}
+
+/* ============================chat_div========================== */
+
+.chat_div {
+    display: block;
+    position: absolute;
+    left: 20%;
+    height: 85vh;
+    width: 75%;
+    background-color: var(--background-color2);
+    animation: chat_an 0.8s ease forwards;
+    opacity: 0;
+    animation-delay: 0.5s;
+    transition: all 0.5s;
+}
+
+.chat_box {
+    position: absolute;
+    height: 80vh;
+    width: 90%;
+    margin-left: 5%;
+    background-color: var(--background-color2);
+}
+
+.input_msg {
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    background-color: var(--background-color2);
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--text-color);
+    font-size: 1.2vw;
+    color: var(--text-color);
+    padding: 10px;
+}
+
+.send_msg {
+    position: absolute;
+    bottom: 0;
+    right: 5%;
+    height: max-content;
+    width: max-content;
+    padding: 2%;
+    background: var(--gradient--);
+    border: none;
+    border-radius: 5px;
+    color: var(--icon-color--);
+    font-size: 1.5vw;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.messages {
+    margin: 10px;
+    color: var(--text-color);
+    max-height: 50vh;
+    overflow-y: auto;
+    font-size: 1.1vw;
+}
+
+.message-container {
+    display: flex;
+    /* Use flex to align message and time horizontally */
+    align-items: center;
+    /* Vertically center the time with the text */
+    max-width: 60%;
+    margin: 5px;
+    cursor: pointer;
+    clear: both;
+}
+
+.my_message {
+    max-width: 20%;
+    margin-left: auto;
+    /* Push to right */
+    background: var(--s_gradient--);
+    color: var(--s_text-color);
+    padding: 5px 10px;
+    border-radius: 7px 0px 7px 7px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.friend_message {
+    max-width: 20%;
+    margin-right: auto;
+    /* Push to left */
+    background: var(--r_gradient--);
+    color: var(--r_text-color);
+    padding: 5px 10px;
+    border-radius: 0px 7px 7px 7px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.message-text {
+    flex-grow: 1;
+    /* Message text takes available space */
+}
+
+.message-time {
+    display: none;
+    font-size: 0.75rem;
+    color: gray;
+    margin-left: 8px;
+    /* Spacing between message and time */
+    user-select: none;
+    white-space: nowrap;
+}
+
+.message-container.show-time .message-time {
+    display: inline;
+}
+
+
+
+/* ==============================search====================== */
+
+.search_main {
+    display: none;
+    position: absolute;
+    top: 5%;
+    right: 11%;
+    height: 80vh;
+    width: 60%;
+    background-color: var(--background-color3);
+    border-radius: 5px;
+}
+
+.search_box {
+    height: auto;
+    width: 60%;
+    margin-left: 5%;
+    margin-top: 2%;
+    background-color: transparent;
+    margin-bottom: 2%;
+    border: none;
+    outline: none;
+    font-size: 1.3vw;
+    color: var(--text-color);
+}
+
+.search_main hr {
+    margin-bottom: 2%;
+}
+
+.back1 {
+    width: max-content;
+    left: 2%;
+    padding: 2%;
+    margin: 3%;
+    background: var(--gradient--);
+    border: none;
+    border-radius: 5px;
+    color: var(--icon-color--);
+    font-size: 1vw;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.search_btn {
+    width: max-content;
+    padding: 0;
+    margin: 3%;
+    background: var(--gradient--);
+    border: none;
+    border-radius: 5px;
+    color: var(--icon-color--);
+    font-size: 1vw;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.table_sty {
+    width: 95%;
+    margin-top: 2%;
+    margin-left: 2.5%;
+    background: var(--member-table--);
+    border-radius: 5px;
+}
+
+
+.log_out_btn2 {
+    display: block;
+    position: absolute;
+    left: 5%;
+    width: max-content;
+    left: 5%;
+    padding: 1%;
+    background: var(--gradient--);
+    border: none;
+    border-radius: 5px;
+    color: var(--icon-color--);
+    font-size: 1.2vw;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+        font-size: 1.5vw;
+    }
+}
+
+.profile_btn2 {
+    display: none;
+}
+
+/* ==============================Group Creating =========================== */
+
+.group_btn {
+    height: max-content;
+    width: max-content;
+    padding: 2%;
+    font-size: 1.2vw;
+    background: var(--gradient--);
+    margin: 2%;
+    border-radius: 5px;
+}
+
+.create_group_modal h3 {
+    font-size: 1.5vw;
+    color: var(--text-color);
+}
+
+.create_group_modal{
+    display: none;
+}
+
+.create_group_modal .group_name_in {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--text-color);
+    font-size: 1.4vw;
+    margin-top: 2%;
+    color: var(--text-color);
+    padding: 1%;
+}
+
+.create_group_modal p {
+    margin-top: 2%;
+    font-size: 1.3vw;
+    color: var(--text-color);
+}
+
+.create_gp {
+    height: max-content;
+    width: max-content;
+    padding: 2%;
+    font-size: 1.2vw;
+    background: var(--gradient--);
+    margin: 2%;
+    border-radius: 5px;
+}
+
+.group_chat_box {
+    display: none;
+    position: absolute;
+    left: 0;
+    height: 80vh;
+    width: 100%;
+    margin-left: 0;
+}
+
+.messages {
+    margin: 10px;
+    color: white;
+    max-height: 50vh;
+    overflow-y: auto;
+    font-size: 1.2vw;
+}
+
+/* .gp_my_message {
+    text-align: right;
+    background: var(--s_gradient--);
+    color: var(--s_text-color);
+    font-size: 1.2vw;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 7px 7px 7px 0;
+    margin: 5px;
+    max-width: 60%;
+    float: right;
+    clear: both;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.gp_friend_message {
+    text-align: left;
+    background: var(--r_gradient--);
+    color: var(--r_text-color);
+    padding: 5px 10px;
+    border-radius: 7px 7px 0 7px;
+    margin: 5px;
+    max-width: 60%;
+    float: left;
+    clear: both;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+} */
+
+
+/* ===============================Profile Mode====================== */
+
+.profile {
+    display: none;
+    position: absolute;
+    height: 88vh;
+    width: 83%;
+    border-radius: 7px;
+    margin-left: 17%;
+    background-color: var(--background-color2);
+    overflow-y: scroll;
+}
+
+.back2 {
+    width: max-content;
+    left: 2%;
+    padding: 1%;
+    margin: 1%;
+    background: var(--gradient--);
+    border: none;
+    border-radius: 5px;
+    color: var(--icon-color--);
+    font-size: 1.85vw;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.profile_dp {
+    height: 10vh;
+    width: 10vh;
+    background: url(profile_dp.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.p_uid {
+    font-size: 1.2vw;
+}
+
+.h2_name {
+    font-size: 1.2vw;
+    color: var(--text-color);
+}
+
+#username_input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #eee;
+    border-bottom: 2px solid var(--text-color);
+    text-align: center;
+}
+
+#mobile_input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #eee;
+    border-bottom: 2px solid var(--text-color);
+    text-align: center;
+}
+
+#op_gender {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #252525;
+    border-bottom: 2px solid var(--text-color);
+    text-align: center;
+}
+
+#bio_input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #eee;
+    border-bottom: 2px solid var(--text-color);
+    text-align: center;
+}
+
+#update_profile_btn {
+    position: absolute;
+    left: 5%;
+    width: 30%;
+    left: auto;
+    right: 5%;
+    padding: 2%;
+    background: var(--gradient--);
+    border: none;
+    border-radius: 5px;
+    color: var(--icon-color--);
+    font-size: 1.8vw;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &:hover {
+        font-size: 1.8vw;
+    }
+}
+
+
+/* ===============================Mobile Mode=================== */
+
+@media(max-width:800px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    :root {
+        --back-ground-color: #0e0e0e;
+        --background-color2: #252525;
+        --background-color3: #1a1a1a;
+        --gradient--: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+        --icon-color--: #333;
+        --text-color: #eee;
+    }
+
+    body.theme-default {
+        --back-ground-color: #0e0e0e;
+        --background-color2: #252525;
+        --gradient--: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+        --s_gradient--: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+        --r_gradient--: linear-gradient(50deg, rgb(191, 239, 255), rgb(255, 226, 230));
+        --icon-color--: #000000;
+        --text-color: #c0c0c0;
+        --s_text-color: #181818;
+        --r_text-color: #333333;
+        --member-table--: #333333;
+    }
+
+    body.theme-dark {
+        --back-ground-color: #0e0e0e;
+        --background-color2: #0e0e0e;
+        --gradient--: linear-gradient(50deg, rgb(95, 95, 95), rgb(141, 141, 141));
+        --r_gradient--: linear-gradient(50deg, rgb(24, 24, 24), rgb(39, 39, 39));
+        --s_gradient--: linear-gradient(50deg, rgb(43, 43, 43), rgb(68, 68, 68));
+        --icon-color--: rgb(0, 0, 0);
+        --text-color: rgb(146, 146, 146);
+        --s_text-color: #a8a8a8;
+        --r_text-color: #aaaaaa;
+        --member-table--: #252525;
+    }
+
+    body.theme-extra-dark {
+        --back-ground-color: rgb(0, 0, 0);
+        --background-color2: #000000;
+        --gradient--: linear-gradient(50deg, #3f3f3f, #1d1d1d);
+        --s_gradient--: linear-gradient(50deg, rgb(24, 24, 24), rgb(26, 25, 25));
+        --r_gradient--: linear-gradient(50deg, rgb(17, 17, 17), rgb(22, 22, 22));
+        --icon-color--: #000000;
+        --text-color: #535353;
+        --s_text-color: #8b8b8b;
+        --r_text-color: #535353;
+        --member-table--: #141414;
+    }
+
+    body {
+        background-color: var(--back-ground-color);
+    }
+
+    nav {
+        display: none;
+    }
+
+
+    @keyframes logo {
+        0% {
+            transform: translateY(-50%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* ================================Main Page================================== */
+    .main_container {
+        position: fixed;
+        height: 100vh;
+        width: 98%;
+        margin-left: 1%;
+        margin-top: 0;
+        background-color: var(--back-ground-color);
+        border-radius: 5px;
+        z-index: 3;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-gap: 10px;
+    }
+
+    /* =======================================Members page================================= */
+
+    .members {
+        grid-column: 1/2;
+        background-color: var(--background-color2);
+        border-radius: 5px;
+        animation: members_an 0.5s ease forwards;
+        animation-delay: 0.5s;
+        opacity: 0;
+        display: grid;
+        grid-template-columns: 5fr;
+        grid-template-rows: 2fr 5fr 1fr;
+        grid-gap: 5px;
+    }
+
+    @keyframes members_an {
+        0% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+
+
+    /* =====================top div ======= */
+
+    .top_div {
+        display: flex;
+        width: 100%;
+        opacity: 0;
+        animation: top_div_an 0.8s ease forwards;
+        animation-delay: 1s;
+    }
+
+    .members hr {
+        display: none;
+        opacity: 0;
+        animation: top_div_an 0.8s ease forwards;
+        animation-delay: 1s;
+    }
+
+    @keyframes top_div_an {
+        0% {
+            opacity: 0;
+            transform: translateY(-50%);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .members h2 {
+        display: none;
+        background: -webkit-linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 5.5vw;
+        margin: 5% auto auto 8%;
+        text-align: left;
+        padding-top: 1%;
+    }
+
+    .mid_div p {
+        background: -webkit-linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 4.5vw;
+        margin: -8% auto auto 8%;
+        text-align: left;
+        padding-top: 1%;
+    }
+
+
+    .members button {
+        height: max-content;
+        padding: 2%;
+        background: var(--gradient--);
+        border: none;
+        border-radius: 5px;
+        color: var(--icon-color--);
+        font-size: 3vw;
+        margin: 5vh 5% auto auto;
+        cursor: pointer;
+        transition: all 0.5s;
+        margin-bottom: 5%;
+    }
+
+    /* =========================mid div ================== */
+
+    .mid_div {
+        width: 100%;
+    }
+
+    #search_uid {
+        height: auto;
+        width: 90%;
+        font-size: 2vw;
+        background-color: transparent;
+        outline: none;
+        border: 0;
+        border-bottom: 2px solid var(--text-color);
+        transition: all 0.5s;
+        color: var(--text-color);
+        margin-left: 8%;
+
+        &:focus {
+            font-size: 1.2vw;
+        }
+    }
+
+    #search_btn {
+        width: max-content;
+        height: max-content;
+        padding: 2.5%;
+    }
+
+    /* ============================bottom diV================= */
+
+    .bottom_div {
+        position: relative;
+        width: 100%;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+
+    }
+
+    .log_out_btn {
+        display: none;
+        position: absolute;
+        left: 5%;
+        width: 90%;
+        left: 5%;
+        padding: 2%;
+        background: var(--gradient--);
+        border: none;
+        border-radius: 5px;
+        color: var(--icon-color--);
+        font-size: 3.5vw;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover {
+            font-size: 4.5vw;
+        }
+    }
+
+    .log_out_btn2 {
+        display: block;
+        width: 90%;
+        left: 5%;
+        padding: 2%;
+        background: var(--gradient--);
+        border: none;
+        border-radius: 5px;
+        color: red;
+        font-size: 4vw;
+        cursor: pointer;
+        transition: all 0.5s;
+        margin-top: 15%;
+
+        &:hover {
+            font-size: 4.5vw;
+        }
+    }
+
+    .profile_btn2 {
+        display: block;
+        left: 10%;
+        width: 90%;
+        padding: 2%;
+        background: red;
+        border: none;
+        border-radius: 5px;
+        color: var(--icon-color--);
+        font-size: 3.5vw;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover {
+            font-size: 3.5;
+        }
+    }
+
+    /* =================================chat page================================== */
+
+    .chat {
+        display: none;
+    }
+
+    .chat.active {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--background-color2);
+        z-index: 10;
+        overflow-y: auto;
+    }
+
+
+    .chat h1 {
+        display: none;
+        background: -webkit-linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.5vw;
+        animation: text_heading 0.7s ease forwards;
+        animation-delay: 1s;
+        opacity: 0;
+    }
+
+    @keyframes text_heading {
+        0% {
+            font-size: 1vw;
+            opacity: 0;
+        }
+
+        100% {
+            font-size: 2.5vw;
+            opacity: 1;
+        }
+    }
+
+    /* ============================chat_div========================== */
+
+    .chat_div {
+        position: absolute;
+        height: 100%;
+        animation: chat_an 0.8s ease forwards;
+        opacity: 0;
+        animation-delay: 0.5s;
+        transition: all 0.5s;
+    }
+
+    .chat_box {
+        display: none;
+        position: absolute;
+        left: 0;
+        height: 80vh;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .input_msg {
+        position: absolute;
+        bottom: 1.5%;
+        left: 15%;
+        background-color: #222222;
+        outline: none;
+        border: 2px solid #eee;
+        border-radius: 7px;
+        font-size: 3.5vw;
+        color: var(--text-color);
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .send_msg {
+        position: absolute;
+        bottom: 2.5%;
+        right: 5%;
+        height: max-content;
+        width: max-content;
+        padding: 2%;
+        background: var(--gradient--);
+        border: none;
+        border-radius: 5px;
+        color: var(--icon-color--);
+        font-size: 3.5vw;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .messages {
+        margin: 10px;
+        color: white;
+        max-height: 50vh;
+        overflow-y: auto;
+        font-size: 4vw;
+    }
+
+    .my_message {
+        text-align: right;
+        background: var(--s_gradient--);
+        color: var(--s_text-color);
+        font-size: 3.5vw;
+        cursor: pointer;
+        padding: 5px 10px;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        border-top-left-radius: 7px;
+        margin: 5px;
+        max-width: 60%;
+        float: right;
+        clear: both;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+
+    .friend_message {
+        text-align: left;
+        background: var(--r_gradient--);
+        color: var(--r_text-color);
+        padding: 5px 10px;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        border-top-right-radius: 7px;
+        margin: 5px;
+        max-width: 60%;
+        float: left;
+        clear: both;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+
+
+
+    /* ==============================search====================== */
+
+    .search_main {
+        display: none;
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        right: 5%;
+        height: max-content;
+        width: 90%;
+        background-color: var(--background-color3);
+        border-radius: 5px;
+    }
+
+    .search_box {
+        height: auto;
+        width: 60%;
+        margin-left: 5%;
+        margin-top: 2%;
+        background-color: transparent;
+        margin-bottom: 2%;
+        border: none;
+        outline: none;
+        font-size: 3.5vw;
+        color: var(--text-color);
+    }
+
+    .search_main hr {
+        margin-bottom: 2%;
+    }
+
+    .back1 {
+        width: max-content;
+        left: 2%;
+        padding: 2%;
+        margin: 3%;
+        background: var(--gradient--);
+        border: none;
+        border-radius: 5px;
+        color: var(--icon-color--);
+        font-size: 3vw;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .search_btn {
+        width: max-content;
+        padding: 0;
+        margin: 3%;
+        background: var(--gradient--);
+        border: none;
+        border-radius: 5px;
+        color: var(--icon-color--);
+        font-size: 3vw;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    /* ==============================Group Creating =========================== */
+
+    .group_btn {
+        height: max-content;
+        width: max-content;
+        padding: 2%;
+        font-size: 3vw;
+        background: var(--gradient--);
+        margin: 2%;
+        border-radius: 5px;
+    }
+
+    .create_group_modal h3 {
+        font-size: 3.5vw;
+        color: var(--text-color);
+
+    }
+
+    .create_group_modal .group_name_in {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid var(--text-color);
+        font-size: 4vw;
+        margin-top: 2%;
+        color: var(--text-color);
+        padding: 1%;
+        text-align: center;
+    }
+
+    .create_group_modal p {
+        margin-top: 2%;
+        font-size: 3.5vw;
+        color: var(--text-color);
+    }
+
+    .create_gp {
+        height: max-content;
+        width: max-content;
+        padding: 2%;
+        font-size: 3.5vw;
+        background: var(--gradient--);
+        margin: 2%;
+        border-radius: 5px;
+    }
+
+
+    /* ===============================Profile Mode====================== */
+
+    .profile {
+        display: none;
+        position: absolute;
+        height: 90vh;
+        width: 100%;
+        border-radius: 7px;
+        margin-left: 0;
+        background-color: var(--background-color2);
+        overflow-y: scroll;
+    }
+
+    .profile_btn {
+        display: none;
+    }
+
+    .back2 {
+        width: max-content;
+        left: 2%;
+        padding: 3%;
+        margin: 3%;
+        background: var(--gradient--);
+        border: none;
+        border-radius: 5px;
+        color: var(--icon-color--);
+        font-size: 5.5vw;
+        cursor: pointer;
+        transition: all 0.5s;
+    }
+
+    .profile_dp {
+        height: 10vh;
+        width: 10vh;
+        background: url(profile_dp.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+    }
+
+    .p_uid {
+        font-size: 1.2vw;
+    }
+
+    .h2_name {
+        font-size: 1.2vw;
+        color: var(--text-color);
+    }
+
+    #username_input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #eee;
+        border-bottom: 2px solid var(--text-color);
+        text-align: center;
+    }
+
+    #mobile_input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #eee;
+        border-bottom: 2px solid var(--text-color);
+        text-align: center;
+    }
+
+    #op_gender {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #252525;
+        border-bottom: 2px solid var(--text-color);
+        text-align: center;
+    }
+
+    #bio_input {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        color: #eee;
+        border-bottom: 2px solid var(--text-color);
+        text-align: center;
+    }
+
+    #update_profile_btn {
+        position: absolute;
+        left: 5%;
+        width: 90%;
+        padding: 2%;
+        background: var(--gradient--);
+        border: none;
+        border-radius: 5px;
+        color: var(--icon-color--);
+        font-size: 1.5vw;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:hover {
+            font-size: 1.8vw;
+        }
+    }
+
+
+
+}

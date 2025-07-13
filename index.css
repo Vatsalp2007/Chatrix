@@ -1,0 +1,686 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --back-ground-color: #0e0e0e;
+    --background-color2: #252525;
+    --icon-color--: #333;
+    --text-color: lightcyan;
+}
+
+body {
+    background-color: var(--back-ground-color);
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    color: white;
+    width: 100%;
+    font-size: 1.5vw;
+    margin-top: 1.5%;
+    opacity: 0;
+    animation: logo 0.5s ease forwards;
+    animation-delay: 0.5s;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+nav h2 {
+    background: -webkit-linear-gradient(#eee, #333);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+@keyframes logo {
+    0% {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ======================================background ANimation======================= */
+
+.back_ani {
+    position: absolute;
+    z-index: 0;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    background: linear-gradient(145deg, lightcyan, lightpink);
+}
+
+.back_ani div {
+    transition: all 0.3s ease;
+}
+
+.back_ani div:hover {
+    transform: scale(1.1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px lightcyan, 0 0 20px lightpink;
+}
+
+/* ===================================main ============================== */
+
+/* ==========Login - section ====================== */
+
+#login-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    height: max-content;
+    padding-bottom: 2%;
+    width: 30%;
+    margin-left: 1%;
+    margin-top: 10vh;
+    background-color: var(--background-color2);
+    border-radius: 5px;
+    border: 2px solid #eee;
+    z-index: 5;
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-top: 1.2%;
+    font-size: 2.2vw;
+    background: linear-gradient(90deg, rgb(144, 227, 255), lightpink);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.login-container p {
+    text-align: center;
+    margin-top: 1.2%;
+    font-size: 1vw;
+    color: var(--text-color);
+}
+
+.login-container h4 {
+    text-align: center;
+    margin-top: 1.2%;
+    font-size: 1vw;
+    color: var(--text-color);
+}
+
+hr {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.login-container a {
+    text-decoration: none;
+    color: rgb(121, 222, 255);
+    transition: all 0.5s ease;
+
+    &:hover {
+        font-size: 1.5vw;
+    }
+}
+
+.login-container .input1 {
+    text-align: center;
+    margin-left: 0%;
+    margin-bottom: 4%;
+    width: 70%;
+    font-size: 1.2vw;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+}
+
+.login-container .otp_v {
+    text-align: center;
+    margin-left: 0%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: 70%;
+    font-size: 1.2vw;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+}
+
+.verify_btn {
+    width: 70%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    background-color: red;
+    font-size: 1.2vw;
+    background: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    border: 2px solid var(--text-color);
+    border-radius: 2px;
+    transition: all 0.5s;
+
+    &:hover {
+        font-size: 1.5vw;
+    }
+}
+
+.g_btn {
+    width: 70%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    background-color: red;
+    font-size: 1.2vw;
+    background: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    border: 2px solid var(--text-color);
+    border-radius: 2px;
+    transition: all 0.5s;
+
+    &:hover {
+        font-size: 1.5vw;
+    }
+}
+
+
+/* ==========Sign Up- section ====================== */
+
+#signup-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-container {
+    height: max-content;
+    padding-bottom: 2%;
+    width: 30%;
+    margin-left: 1%;
+    margin-top: 10vh;
+    background-color: var(--background-color2);
+    border-radius: 5px;
+    border: 2px solid #eee;
+    z-index: 5;
+}
+
+.signup-container h1 {
+    text-align: center;
+    margin-top: 1.2%;
+    font-size: 2.2vw;
+    background: linear-gradient(90deg, rgb(144, 227, 255), lightpink);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.signup-container p {
+    text-align: center;
+    margin-top: 1.2%;
+    font-size: 1vw;
+    color: var(--text-color);
+}
+
+.signup-container h4 {
+    text-align: center;
+    margin-top: 1.2%;
+    font-size: 1vw;
+    color: var(--text-color);
+}
+
+hr {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.signup-container a {
+    text-decoration: none;
+    color: rgb(121, 222, 255);
+    transition: all 0.5s ease;
+
+    &:hover {
+        font-size: 1.5vw;
+    }
+}
+
+.signup-container .input2 {
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 0%;
+    margin-bottom: 4%;
+    width: 70%;
+    font-size: 1.2vw;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+}
+
+.signup-container .otp_va {
+    text-align: center;
+    margin-left: 0%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: 70%;
+    font-size: 1.2vw;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--text-color);
+}
+
+.ve_btn {
+    width: 70%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    background-color: red;
+    font-size: 1.2vw;
+    background: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    border: 2px solid var(--text-color);
+    border-radius: 2px;
+    transition: all 0.5s;
+
+    &:hover {
+        font-size: 1.5vw;
+    }
+}
+
+.gn_btn {
+    width: 70%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    background-color: red;
+    font-size: 1.2vw;
+    background: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 10px;
+    border: 2px solid var(--text-color);
+    border-radius: 2px;
+    transition: all 0.5s;
+
+    &:hover {
+        font-size: 1.5vw;
+    }
+}
+
+.check_pass {
+    color: #eee;
+}
+
+
+/* ===================================Mobile Mode=================== */
+
+@media(max-width:800px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    :root {
+        --back-ground-color: #0e0e0e;
+        --background-color2: #252525;
+        --icon-color--: #333;
+        --text-color: lightcyan;
+    }
+
+    body {
+        background-color: var(--back-ground-color);
+        overflow: hidden;
+        scroll-behavior: smooth;
+    }
+
+    nav {
+        display: flex;
+        position: fixed;
+        color: white;
+        width: 100%;
+        font-size: 5.6vw;
+        margin-top: 2.3%;
+        opacity: 0;
+        animation: logo 0.5s ease forwards;
+        animation-delay: 0.5s;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav h2 {
+        background: -webkit-linear-gradient(#eee, #333);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+
+    @keyframes logo {
+        0% {
+            transform: translateY(-50%);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* ======================================background ANimation======================= */
+
+    .back_ani {
+        display: none;
+        position: absolute;
+        z-index: -5;
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(7, 1fr);
+        background-color: #252525;
+    }
+
+    .back_ani div {
+        display: none;
+        transition: all 0.3s ease;
+    }
+
+    .back_ani div:hover {
+        display: none;
+        transform: scale(1.1);
+        border-radius: 5px;
+    }
+
+    /* ===================================main ============================== */
+
+    /* ==========Login - section ====================== */
+
+    #login-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color2);
+    background-position: center;
+    background-size: cover;
+}
+
+    .login-container {
+        height: max-content;
+        padding-bottom: 2%;
+        width: 90%;
+        margin-left: 1%;
+        margin-top: 0;
+        background-color: var(--background-color2);
+        border-radius: 5px;
+        z-index: 5;
+    }
+
+    .login-container h1 {
+        text-align: center;
+        margin-top: 1.2%;
+        font-size: 5vw;
+        background: linear-gradient(90deg, rgb(144, 227, 255), lightpink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .login-container p {
+        text-align: center;
+        margin-top: 1.2%;
+        font-size: 3vw;
+        color: var(--text-color);
+    }
+
+    .login-container h4 {
+        text-align: center;
+        margin-top: 1.2%;
+        font-size: 4vw;
+        color: var(--text-color);
+    }
+
+    hr {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    .login-container a {
+        text-decoration: none;
+        color: rgb(121, 222, 255);
+        transition: all 0.5s ease;
+
+        &:hover {
+            font-size: 5vw;
+        }
+    }
+
+    .login-container .input1 {
+        text-align: center;
+        margin-left: 0%;
+        margin-bottom: 4%;
+        width: 70%;
+        font-size: 4vw;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: var(--text-color);
+    }
+
+    .login-container .otp_v {
+        text-align: center;
+        margin-left: 0%;
+        margin-top: 4%;
+        margin-bottom: 4%;
+        width: 70%;
+        font-size: 4vw;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: var(--text-color);
+    }
+
+    .verify_btn {
+        width: 70%;
+        margin-top: 4%;
+        margin-bottom: 2%;
+        background-color: red;
+        font-size: 4vw;
+        background: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 10px;
+        border: 2px solid var(--text-color);
+        border-radius: 2px;
+        transition: all 0.5s;
+
+        &:hover {
+            font-size: 5vw;
+        }
+    }
+
+    .g_btn {
+        width: 70%;
+        margin-top: 4%;
+        margin-bottom: 2%;
+        background-color: red;
+        font-size: 4vw;
+        background: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 10px;
+        border: 2px solid var(--text-color);
+        border-radius: 2px;
+        transition: all 0.5s;
+
+        &:hover {
+            font-size: 5vw;
+        }
+    }
+
+
+    /* ==========Sign Up- section ====================== */
+
+    #signup-section {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        background-color: var(--background-color2);
+    }
+
+    .signup-container {
+        height: max-content;
+        padding-bottom: 2%;
+        width: 90%;
+        margin-left: 0;
+        background-color: var(--background-color2);
+        border-radius: 5px;
+        border: 2px solid #eee;
+        z-index: 5;
+    }
+
+    .signup-container h1 {
+        text-align: center;
+        margin-top: 1.2%;
+        font-size: 5vw;
+        background: linear-gradient(90deg, rgb(144, 227, 255), lightpink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .signup-container p {
+        text-align: center;
+        margin-top: 1.2%;
+        font-size: 3vw;
+        color: var(--text-color);
+    }
+
+    .signup-container h4 {
+        text-align: center;
+        margin-top: 1.2%;
+        font-size: 4vw;
+        color: var(--text-color);
+    }
+
+    hr {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+    .signup-container a {
+        text-decoration: none;
+        color: rgb(121, 222, 255);
+        transition: all 0.5s ease;
+
+        &:hover {
+            font-size: 5vw;
+        }
+    }
+
+    .signup-container .input2 {
+        text-align: center;
+        margin-top: 3%;
+        margin-left: 0%;
+        margin-bottom: 4%;
+        width: 70%;
+        font-size: 4vw;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: var(--text-color);
+    }
+
+    .signup-container .otp_va {
+        text-align: center;
+        margin-left: 0%;
+        margin-top: 4%;
+        margin-bottom: 4%;
+        width: 70%;
+        font-size: 4vw;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        color: var(--text-color);
+    }
+
+    .ve_btn {
+        width: 70%;
+        margin-top: 4%;
+        margin-bottom: 2%;
+        background-color: red;
+        font-size: 4vw;
+        background: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 10px;
+        border: 2px solid var(--text-color);
+        border-radius: 2px;
+        transition: all 0.5s;
+
+        &:hover {
+            font-size: 5vw;
+        }
+    }
+
+    .gn_btn {
+        width: 70%;
+        margin-top: 4%;
+        margin-bottom: 2%;
+        background-color: red;
+        font-size: 4vw;
+        background: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding: 10px;
+        border: 2px solid var(--text-color);
+        border-radius: 2px;
+        transition: all 0.5s;
+
+        &:hover {
+            font-size:5vw;
+        }
+    }
+
+    .check_pass {
+        color: #eee;
+    }
+
+}
