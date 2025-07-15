@@ -51,7 +51,7 @@ $conn->close();
 </head>
 <body>
   <nav>
-    <h2>Chatrix</h2>
+    <h2>Chatrix </h2>
   </nav>
 
   <div class="main_container">

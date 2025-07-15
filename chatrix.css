@@ -749,7 +749,7 @@ nav h2 {
     }
 
     :root {
-        --back-ground-color: #0e0e0e;
+        --back-ground-color: #252525;
         --background-color2: #252525;
         --background-color3: #1a1a1a;
         --gradient--: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
@@ -758,7 +758,7 @@ nav h2 {
     }
 
     body.theme-default {
-        --back-ground-color: #0e0e0e;
+        --back-ground-color: #252525;
         --background-color2: #252525;
         --gradient--: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
         --s_gradient--: linear-gradient(50deg, rgb(144, 227, 255), lightpink);
@@ -828,14 +828,14 @@ nav h2 {
         border-radius: 5px;
         z-index: 3;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 2fr;
         grid-template-rows: 1fr;
         grid-gap: 10px;
     }
 
     /* =======================================Members page================================= */
 
-    .members {
+    .members{
         grid-column: 1/2;
         background-color: var(--background-color2);
         border-radius: 5px;
@@ -1080,7 +1080,7 @@ nav h2 {
         display: none;
         position: absolute;
         left: 0;
-        height: 80vh;
+        height: 85vh;
         width: 100%;
         margin-left: 0;
     }
@@ -1088,7 +1088,7 @@ nav h2 {
     .input_msg {
         position: absolute;
         bottom: 1.5%;
-        left: 15%;
+        left: 5%;
         background-color: #222222;
         outline: none;
         border: 2px solid #eee;
