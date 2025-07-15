@@ -10,6 +10,7 @@ back.addEventListener('click', () => {
     search_main.style.display = 'none';
 });
 
+
 document.getElementById('search_btn').addEventListener('click', () => {
     const uid = document.getElementById('search_box').value;
 
@@ -29,7 +30,7 @@ document.getElementById('search_btn').addEventListener('click', () => {
 });
 
 
-function addFriend(friend_uid) {
+function addFriend(friend_uid){
     const formData = new FormData();
     formData.append('friend_uid', friend_uid);
 
@@ -48,7 +49,7 @@ function addFriend(friend_uid) {
         });
 }
 
-let currentFriendshipId = null; // 🔥 Store current active chat
+let currentFriendshipId = null; 
 
 function showChatBox(friendship_id, friend_name) {
     // Hide welcome text
@@ -102,9 +103,6 @@ function showChatBox(friendship_id, friend_name) {
     // }
 
 
-
-
-// After messages are loaded, add click listeners
 function loadMessages(friendship_id) {
     fetch(`get_message.php?friendship_id=${friendship_id}`)
         .then(response => response.json())
@@ -127,8 +125,7 @@ messagesDiv.innerHTML += `
     <span class="message-time">${timeOnly}</span>
   </div>
 `;
-
-            });
+});
 
             messagesDiv.scrollTop = messagesDiv.scrollHeight;
 
@@ -148,13 +145,14 @@ messagesDiv.innerHTML += `
 
 const sendSound = new Audio('tone.wav');
 
-// Optional: Unlock audio on first user interaction
 document.addEventListener('click', () => {
     sendSound.play().then(() => {
         sendSound.pause();
         sendSound.currentTime = 0;
     }).catch(() => { });
 }, { once: true });
+
+
 
 function sendMessage(friendship_id) {
     let input = document.getElementById(`input_${friendship_id}`);
@@ -183,14 +181,11 @@ function sendMessage(friendship_id) {
         .catch(error => console.error(error));
 }
 
-
-// 🔥🔥🔥 Setup AJAX polling every 3 seconds for active chat
-
 setInterval(() => {
     if (currentFriendshipId !== null) {
         loadMessages(currentFriendshipId);
     }
-}, 3000); // 3000 ms = 3 seconds
+}, 3000); //3 seconds
 
 
 // =============================Profile section==========================
@@ -418,13 +413,11 @@ setInterval(() => {
 }, 3000);
 
 messages.forEach(msg => {
-  // Decide if message is from me or others
   const alignClass = (msg.sender_uid == current_user_uid) ? 'gp_my_message' : 'gp_friend_message';
 
   const msgEl = document.createElement('div');
   msgEl.classList.add('message-container', alignClass);
 
-  // message text + time (optional)
   msgEl.innerHTML = `
     <p class="message-text"><b>${msg.name}:</b> ${msg.message}</p>
   `;

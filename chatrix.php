@@ -5,18 +5,19 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// If session email not set but cookie exists, restore session from cookie
+
 if (!isset($_SESSION['login_email']) && isset($_COOKIE['login_email'])) {
     $_SESSION['login_email'] = $_COOKIE['login_email'];
 }
 
 if (!isset($_SESSION['login_email'])) {
-    // Redirect to login page if neither session nor cookie exists
+
     header('Location: index.php');
     exit();
 }
 
 include('connect.php');
+
 if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
 }
@@ -69,15 +70,12 @@ $conn->close();
   <p><?php echo "Your UID: $uid"; ?></p><br>
   <hr>
 
-  <!-- ✅ Friends -->
+  <!-- Friends -->
   <?php 
     include('connect.php');
     $current_uid = $_SESSION['uid'];
 
-    $sql = "SELECT friends.friendship_id, users.name 
-            FROM friends 
-            JOIN users ON friends.friend_uid = users.uid 
-            WHERE friends.user_uid = '$current_uid'";
+    $sql = "SELECT friends.friendship_id, users.name FROM friends JOIN users ON friends.friend_uid = users.uid WHERE friends.user_uid = '$current_uid'";
 
     $result = $conn->query($sql);
 

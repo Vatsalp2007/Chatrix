@@ -3,7 +3,7 @@ session_start();
 include('connect.php');
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    echo "Connection failed:" . "$conn->connect_error";
 }
 
 $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -21,8 +21,9 @@ $result = $conn->query($check);
 
 if ($result->num_rows > 0) {
     echo "This email is already registered.";
-} else {
-    
+}
+
+else {
     $uid = mt_rand(100000,999999);
 
     $insert = "INSERT INTO users(name, email, password, uid) VALUES ('$name', '$email', '$password', '$uid')";

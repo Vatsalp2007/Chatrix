@@ -16,7 +16,7 @@ $email_to = $_POST['email'];
 $check = "SELECT * FROM users WHERE email = '$email_to'";
 $result = $conn->query($check);
 
-if ($result->num_rows > 0) {
+if($result->num_rows > 0) {
     echo "This email is already registered. Please login instead.";
     $conn->close();
     exit();

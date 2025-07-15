@@ -1,8 +1,10 @@
 <?php
+
 include('connect.php');
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+
 $uid = mysqli_real_escape_string($conn, $_POST['uid']);
 $query = "SELECT name FROM users WHERE uid = '$uid'";
 $result = $conn->query($query);

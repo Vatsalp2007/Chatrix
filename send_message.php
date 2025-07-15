@@ -9,7 +9,7 @@ $current_uid = $_SESSION['uid'];
 $friendship_id = mysqli_real_escape_string($conn, $_POST['friendship_id']);
 $message_text = mysqli_real_escape_string($conn, $_POST['message_text']);
 
-// ✅ Check if user is part of this friendship
+
 $check_sql = "SELECT * FROM friends WHERE friendship_id='$friendship_id' AND (user_uid='$current_uid' OR friend_uid='$current_uid')";
 $check_result = $conn->query($check_sql);
 
